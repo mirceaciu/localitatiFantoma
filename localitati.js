@@ -18,9 +18,9 @@ var map = L.map('map').setView([45.986, 24.785], 7);
 var iconita = new L.icon({
     iconUrl: 'C:/Users/mircea.stanciu/Documents/GitHub/localitatiFantoma/images/fantoma.png',
     //iconRetinaUrl: 'my-icon@2x.png',
-    //iconSize: [16, 16],
-    //iconAnchor: [22, 94],
-    //popupAnchor: [-3, -76],
+    iconSize: [16, 16],
+   //iconAnchor: [0, 0],
+   // popupAnchor: [-3, -76],
     //shadowUrl: 'my-icon-shadow.png',
     //shadowRetinaUrl: 'my-icon-shadow@2x.png',
     //shadowSize: [68, 95],
@@ -37,15 +37,7 @@ L.geoJson(localitati, {
 }).addTo(map).bringToFront();
 
 /*
-L.geoJson(exp_fantome, {
-	onEachFeature: puncteLocalitati
-}).addTo(map);
-*/
-
-
-/*
 L.geoJson(judete, {
-	onEachFeature: puncteLocalitati
+	//onEachFeature: puncteLocalitati
 }).addTo(map);
-
 */
