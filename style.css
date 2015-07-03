@@ -2,7 +2,18 @@
 
 #map {
 	display: block;
-	margin: 0 auto;
-	width: 100%;
+	
+	width: 60%;
 	height: 650px;
+	float:left;
 }
+
+#info {
+display: block;
+width: 40%;
+height: 650px;
+float:right;
+
+
+}
+

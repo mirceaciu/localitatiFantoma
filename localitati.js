@@ -24,7 +24,7 @@ var iconita = new L.icon({
     //shadowUrl: 'my-icon-shadow.png',
     //shadowRetinaUrl: 'my-icon-shadow@2x.png',
     //shadowSize: [68, 95],
-    //shadowAnchor: [22, 94]
+    //shadowAnchor: [2, 94]
 });
 
 function puncteLocalitati(feature, layer){
@@ -33,8 +33,27 @@ function puncteLocalitati(feature, layer){
 };
 
 L.geoJson(localitati, {
-	onEachFeature: puncteLocalitati
+	//onEachFeature: puncteLocalitati;
+    onEachFeature: function (feature, layer) {
+        //layer.bindPopup(feature.properties.GPSUserName);
+
+        layer.on('click', function (e) {
+            document.getElementById("info").innerHTML = '<embed type="application/x-shockwave-flash" src="https://photos.gstatic.com/media/slideshow.swf" width="400" height="267" flashvars="host=picasaweb.google.com&hl=en_US&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F117058608469882484167%2Falbumid%2F6150460782771452641%3Falt%3Drss%26kind%3Dphoto%26hl%3Den_US" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>';
+           
+           // $("#feature_infos").stop();
+           // $("#feature_infos").fadeIn("fast");
+
+            console.log(feature.properties.Name);
+           // $("#feature_infos").fadeOut(5000);
+            // This is your click handler. 
+            // Your feature is available here as e.target, and the 
+            //featureInfo object we added is available as e.target.featureInfo 
+        });
+    }
 }).addTo(map).bringToFront();
+
+
+
 
 /*
 L.geoJson(judete, {
