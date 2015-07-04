@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -15,12 +16,22 @@ html {
 #title {
 	width:40%;
 	height:50px;
-	background-color: red;
+	background-color: #68B89A;
+	color: #fff;
+	font-size: 22px;
 	float:right;
-	padding: 10px;
 	text-align: center;
+	border-bottom: 2px solid #4D8C75;
+	
+	font-weight: 700;
 }
 
+.vertical-center {
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
 
 #info {
 display: block;
@@ -28,6 +39,7 @@ width: 40%;
 height: 300px;
 float:right;
 background-color: pink;
+padding: 10px;
 }
 
 #meta {
@@ -35,5 +47,19 @@ display: block;
 width: 40%;
 height: 300px;
 float:right;
-background-color: blue;
+text-align: center;
+font-style: italic;
+}
+
+.button {
+	margin-top: 25px;
+	text-decoration: none;
+	padding:5px;
+	background-color: #68B89A;
+	color: #fff;
+
+}
+
+.button:hover {
+	background-color: #7CD9B6;
 }
