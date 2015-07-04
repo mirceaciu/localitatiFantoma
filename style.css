@@ -1,19 +1,39 @@
-
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 #map {
 	display: block;
-	
 	width: 60%;
 	height: 650px;
-	float:left;
+	float:left;}
+
+
+#title {
+	width:40%;
+	height:50px;
+	background-color: red;
+	float:right;
+	padding: 10px;
+	text-align: center;
 }
+
 
 #info {
 display: block;
 width: 40%;
-height: 650px;
+height: 300px;
 float:right;
-
-
+background-color: pink;
 }
 
+#meta {
+display: block;
+width: 40%;
+height: 300px;
+float:right;
+background-color: blue;
+}

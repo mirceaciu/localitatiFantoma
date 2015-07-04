@@ -9,6 +9,10 @@ var map = L.map('map').setView([45.986, 24.785], 7);
     accessToken: 'pk.eyJ1IjoibWlyY2VhY2l1IiwiYSI6IjNkNGFiMTU5NjRlNGNkZTA1ZGExMDVkNjUxYzZmZDlhIn0.5E0fCQOJlyAJFjkEYX1NGg'
 }).addTo(map);
 
+
+
+
+var slideshow = '<embed type="application/x-shockwave-flash" src="https://photos.gstatic.com/media/slideshow.swf" width="100%" height="300px" flashvars="host=picasaweb.google.com&hl=en_US&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F117058608469882484167%2Falbumid%2F6150460782771452641%3Falt%3Drss%26kind%3Dphoto%26hl%3Den_US" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'
     //map.dragging.disable();
     //map.touchZoom.disable();
     //map.doubleClickZoom.disable();
@@ -38,7 +42,8 @@ L.geoJson(localitati, {
         //layer.bindPopup(feature.properties.GPSUserName);
 
         layer.on('click', function (e) {
-            document.getElementById("info").innerHTML = '<embed type="application/x-shockwave-flash" src="https://photos.gstatic.com/media/slideshow.swf" width="400" height="267" flashvars="host=picasaweb.google.com&hl=en_US&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F117058608469882484167%2Falbumid%2F6150460782771452641%3Falt%3Drss%26kind%3Dphoto%26hl%3Den_US" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>';
+            document.getElementById("info").innerHTML = "aici vom scrie informatii despre " + feature.properties.Name + ", iar mai jos imagini, daca exista" 
+            document.getElementById("meta").innerHTML = slideshow;
            
            // $("#feature_infos").stop();
            // $("#feature_infos").fadeIn("fast");
