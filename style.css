@@ -63,15 +63,25 @@ background-image: url('images/bg.jpg');
 	margin-top: 25px;
 	text-decoration: none;
 	padding:6px 10px;
-	background-color: #65AB91;
+	background-color: #68B89A;
 	color: #fff;
+	border-radius: 5px;
 
 }
 
 .button:hover {
-	background-color: #7CD9B6;
+	background-color: #4D8C75;
 }
-
+.button:active {
+	background-color: #477C6B;
+	position: relative;
+	top: 2px;
+	left: 1px;
+	border-bottom: 2px solid #29473E;
+	/*
+	border-bottom: 4px solid #29473E;
+	*/
+}
 
 
 /* Media QUERyES  */

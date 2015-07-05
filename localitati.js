@@ -60,8 +60,18 @@ L.geoJson(localitati, {
 
 
 
-/*
+
 L.geoJson(judete, {
 	//onEachFeature: puncteLocalitati
+
+     style: function (feature) {
+        return {
+        fillColor: 'none',
+        weight: 2,
+        opacity: 1,
+        color: '#68B89A',
+        dashArray: '0',
+        fillOpacity: 0.7}
+    }
+    
 }).addTo(map);
-*/
