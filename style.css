@@ -1,7 +1,8 @@
 html {
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
-
+	background-image: url('images/bg-cover.jpg');
+	background-size: cover;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -10,18 +11,29 @@ html {
 body{
 	margin: 0px;
 	padding: 0px;
+
+}
+
+#containter {
+	width:40%;
+	height:100vh;
+	float:right;
+	background-color: rgba(229, 229, 229, 0.4);
 }
 
 #map {
+	background-color:rgba(229, 229, 229,0);
 	display: block;
 	width: 60%;
-	height: 650px;
+	height: 100vh;
 	float:left;}
 
 
 #title {
-	width:40%;
-	height:50px;
+	width:100%;
+	height:10%;
+	max-height: 50px;
+	min-height: 50px;
 	background-color: #68B89A;
 	color: #fff;
 	font-size: 22px;
@@ -41,8 +53,8 @@ body{
 
 #info {
 display: block;
-width: 40%;
-height: 300px;
+width: 100%;
+height: 55%;
 float:right;
 padding:0px 10px;
 
@@ -51,12 +63,17 @@ padding:0px 10px;
 #meta {
 display: block;
 width: 40%;
-height: 300px;
+height: 35%;
 float:right;
 text-align: center;
 font-style: italic;
 color: #fff;
+/*
 background-image: url('images/bg.jpg');
+background-size: cover;
+*/
+position: absolute;
+bottom: 0px;
 }
 
 .button {
@@ -87,10 +104,11 @@ background-image: url('images/bg.jpg');
 /* Media QUERyES  */
 
  @media (max-width:800px) {
-  #map {width: 100%; height: 350px;}
-  #title {width: 100%}
-  #info {width: 50%; float:left;}
-  #meta {width: 50%}
+  #containter{width:100%; height: 60vh}	
+  #map {width: 100%; height: 40vh; min-height: 350px; margin-top: 50px}
+  #title {width: 100%; position: absolute; top:0px;max-height: 50px; min-height: 50px}
+  #info {width: 50%;height: 100%; ;float:left}
+  #meta {position: relative; width: 50%;height: 100%; background-color: black}
   }
 
 @media (max-width: 500px) {
