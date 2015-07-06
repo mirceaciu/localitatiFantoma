@@ -13,7 +13,7 @@ var map = L.map('map').setView([45.986, 24.785], 6);
 
 
 
-var slideshow = '<embed type="application/x-shockwave-flash" src="https://photos.gstatic.com/media/slideshow.swf" width="100%" height="100%" flashvars="host=picasaweb.google.com&hl=en_GB&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F101308797789854061175%2Falbumid%2F6164681416049640049%3Falt%3Drss%26kind%3Dphoto%26hl%3Den_GB" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'
+var slideshow = '<embed type="application/x-shockwave-flash" src="https://photos.gstatic.com/media/slideshow.swf"  width="100%" height="100%" flashvars="host=picasaweb.google.com&hl=en_GB&feat=flashalbum&RGB=0x68B89A&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F101308797789854061175%2Falbumid%2F6164681416049640049%3Falt%3Drss%26kind%3Dphoto%26hl%3Den_GB" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'
     //map.dragging.disable();
     //map.touchZoom.disable();
     //map.doubleClickZoom.disable();
