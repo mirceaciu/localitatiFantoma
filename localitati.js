@@ -34,9 +34,9 @@ var iconita = new L.icon({
 
 
 
+
 L.geoJson(localitati, {
 	
-    
 
     onEachFeature: function (feature, layer) {
         layer.bindPopup(feature.properties.name);
@@ -44,7 +44,7 @@ L.geoJson(localitati, {
 
         layer.on('click', function (e) {
             document.getElementById("info").innerHTML = "<p>aici vom scrie informatii despre " + feature.properties.name + ", iar mai jos imagini, daca exista</p>" + "<br>"+ "<p> pentru imagini se vor da credite autorului tot aici gen:</p><p><a href=''> Autor: Andrea Dumitrache</a><p/>"  
-            document.getElementById("meta").innerHTML = slideshow;
+            document.getElementById("meta").innerHTML = feature.properties.pictures;
            
            // $("#feature_infos").stop();
            // $("#feature_infos").fadeIn("fast");
