@@ -95,6 +95,18 @@ bottom: 0px;
 
 }
 
+.inJos {
+	text-decoration: none;
+	padding:9px 15px;
+	background-color: #68B89A;
+	color: #fff;
+	border-radius: 5px;
+	position: absolute;
+	top: 377px;
+	left:5px;
+	display: none;
+}
+
 .button:hover {
 	background-color: #4D8C75;
 }
@@ -125,6 +137,7 @@ bottom: 0px;
   #title {width: 100%}
   #info {width: 100%}
   #meta {width: 100%}
+  .inJos {display:initial;}
   }
 
  
