@@ -21,7 +21,7 @@ var slideshow = '<embed type="application/x-shockwave-flash" src="https://photos
 //if (map.tap) map.tap.disable();
 
 var iconita = new L.icon({
-    iconUrl: 'images/gimmi.png',
+    iconUrl: 'images/capF.png',
     //iconRetinaUrl: 'my-icon@2x.png',
     iconSize: [16, 16],
    //iconAnchor: [0, 0],
@@ -67,12 +67,12 @@ L.geoJson(judete, {
 
      style: function (feature) {
         return {
-        fillColor: 'none',
+        fillColor: '#D277C6',
         weight: 1.5,
         opacity: 1,
         color: '#ffffff',
         dashArray: '0',
-        fillOpacity: 0.7}
+        fillOpacity: 0.2}
     }
     
 }).addTo(map);
