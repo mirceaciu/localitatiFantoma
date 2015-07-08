@@ -22,7 +22,7 @@ var slideshow = '<ul class="rslides"><li><img src="images/1.jpg" alt=""></li><li
 //if (map.tap) map.tap.disable();
 
 var iconita = new L.icon({
-    iconUrl: 'images/capF.png',
+    iconUrl: 'images/gimmi-round.png',
     //iconRetinaUrl: 'my-icon@2x.png',
     iconSize: [16, 16],
    //iconAnchor: [0, 0],
@@ -64,12 +64,12 @@ L.geoJson(localitati, {
               before: function(){},   // Function: Before callback
               after: function(){}     // Function: After callback
             });
-           
-           // $("#feature_infos").stop();
-           // $("#feature_infos").fadeIn("fast");
+			
+            //$("#meta").stop();
+            //$("#meta").fadeIn("fast");
 
-            console.log(feature.properties.name);
-           // $("#feature_infos").fadeOut(5000);
+            //console.log(feature.properties.name);
+            //$("#meta").fadeOut(5000);
             // This is your click handler. 
             // Your feature is available here as e.target, and the 
             //featureInfo object we added is available as e.target.featureInfo 
