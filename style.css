@@ -102,8 +102,8 @@ bottom: 0px;
 	color: #fff;
 	border-radius: 5px;
 	position: absolute;
-	top: 377px;
-	left:5px;
+	top: 60px;
+	right:5px;
 	display: none;
 }
 
@@ -130,6 +130,7 @@ bottom: 0px;
   #title {width: 100%; position: absolute; top:0px;max-height: 50px; min-height: 50px}
   #info {width: 50%;height: 100%; ;float:left}
   #meta {position: relative; width: 50%;height: 100%; background-color: rgba(99, 150, 146, 0.5)}
+  .inJos {display:initial;}
   }
 
 @media (max-width: 500px) {
@@ -137,7 +138,7 @@ bottom: 0px;
   #title {width: 100%}
   #info {width: 100%}
   #meta {width: 100%}
-  .inJos {display:initial;}
+  
   }
 
  
