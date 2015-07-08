@@ -13,7 +13,8 @@ var map = L.map('map').setView([45.986, 24.785], 6);
 
 
 
-var slideshow = '<embed type="application/x-shockwave-flash" src="https://photos.gstatic.com/media/slideshow.swf"  width="100%" height="100%" flashvars="host=picasaweb.google.com&hl=en_GB&feat=flashalbum&RGB=0x68B89A&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F101308797789854061175%2Falbumid%2F6164681416049640049%3Falt%3Drss%26kind%3Dphoto%26hl%3Den_GB" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>'
+var slideshow = '<ul class="rslides"><li><img src="images/1.jpg" alt=""></li><li><img src="images/2.jpg" alt=""></li><li><img src="images/3.jpg" alt=""></li></ul>'
+
     //map.dragging.disable();
     //map.touchZoom.disable();
     //map.doubleClickZoom.disable();
@@ -44,7 +45,25 @@ L.geoJson(localitati, {
 
         layer.on('click', function (e) {
             document.getElementById("info").innerHTML = "<p>aici vom scrie informatii despre " + feature.properties.name + ", iar mai jos imagini, daca exista</p>" + "<br>"+ "<p> pentru imagini se vor da credite autorului tot aici gen:</p><p><a href=''> Autor: Andrea Dumitrache</a><p/>"  
-            document.getElementById("meta").innerHTML = feature.properties.pictures;
+            document.getElementById("meta").innerHTML = slideshow;
+            $(".rslides").responsiveSlides({
+              auto: true,             // Boolean: Animate automatically, true or false
+              speed: 500,            // Integer: Speed of the transition, in milliseconds
+              timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+              pager: false,           // Boolean: Show pager, true or false
+              nav: true,             // Boolean: Show navigation, true or false
+              random: false,          // Boolean: Randomize the order of the slides, true or false
+              pause: false,           // Boolean: Pause on hover, true or false
+              pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+              prevText: "Previous",   // String: Text for the "previous" button
+              nextText: "Next",       // String: Text for the "next" button
+              maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+              navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+              manualControls: "",     // Selector: Declare custom pager navigation
+              namespace: "rslides",   // String: Change the default namespace used
+              before: function(){},   // Function: Before callback
+              after: function(){}     // Function: After callback
+            });
            
            // $("#feature_infos").stop();
            // $("#feature_infos").fadeIn("fast");
