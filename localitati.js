@@ -45,7 +45,7 @@ L.geoJson(localitati, {
 
         layer.on('click', function (e) {
             document.getElementById("info").innerHTML = "<p>aici vom scrie informatii despre " + feature.properties.name + ", iar mai jos imagini, daca exista</p>" + "<br>"+ "<p> pentru imagini se vor da credite autorului tot aici gen:</p><p><a href=''> Autor: Andrea Dumitrache</a><p/>"  
-            document.getElementById("meta").innerHTML = slideshow;
+            document.getElementById("meta").innerHTML = feature.properties.pictures;
             $(".rslides").responsiveSlides({
               auto: false,             // Boolean: Animate automatically, true or false
               speed: 500,            // Integer: Speed of the transition, in milliseconds
