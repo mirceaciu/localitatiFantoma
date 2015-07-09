@@ -1,16 +1,25 @@
 var map = L.map('map').setView([45.986, 24.785], 6);
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+var  cuBaseMap  = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> &amp; <a href="http://geo-spatial.org">Geo-spatial.org</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>, Map by Mirceaciu',
+    zoomControl: false,
+    maxZoom: 17,
+    minZoom: 6,
+    id:'mirceaciu.6caff4a4', // cubasemap
+    accessToken: 'pk.eyJ1IjoibWlyY2VhY2l1IiwiYSI6IjNkNGFiMTU5NjRlNGNkZTA1ZGExMDVkNjUxYzZmZDlhIn0.5E0fCQOJlyAJFjkEYX1NGg'
+}),
+ 
+
+ transparent =   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> &amp; <a href="http://geo-spatial.org">Geo-spatial.org</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>, Map by Mirceaciu',
     zoomControl: false,
     maxZoom: 10,
     minZoom: 6,
     id: 'mirceaciu.ml2704el', // transparent
-//  id:'mirceaciu.6caff4a4', // cubasemap
     accessToken: 'pk.eyJ1IjoibWlyY2VhY2l1IiwiYSI6IjNkNGFiMTU5NjRlNGNkZTA1ZGExMDVkNjUxYzZmZDlhIn0.5E0fCQOJlyAJFjkEYX1NGg'
 }).addTo(map);
 
-
+  
 
 
 var slideshow = '<ul class="rslides"><li><img src="images/1.jpg" alt=""></li><li><img src="images/2.jpg" alt=""></li><li><img src="images/3.jpg" alt=""></li></ul>'
@@ -36,7 +45,7 @@ var iconita = new L.icon({
 
 
 
-L.geoJson(localitati, {
+var localitatiPuncte = L.geoJson(localitati, {
 	
 
     onEachFeature: function (feature, layer) {
@@ -81,7 +90,7 @@ L.geoJson(localitati, {
 
 
 
-L.geoJson(judete, {
+var JudetePoly = L.geoJson(judete, {
 	//onEachFeature: puncteLocalitati
 
      style: function (feature) {
@@ -95,3 +104,17 @@ L.geoJson(judete, {
     }
     
 }).addTo(map);
+
+
+var baseMaps = {
+    "FrumoasaRom": transparent,
+    "BasemapMapBox": cuBaseMap
+    
+};
+
+var overlayMaps = {
+    "Localitati": localitatiPuncte,
+    "Judete" : JudetePoly
+};
+
+L.control.layers(baseMaps, overlayMaps).addTo(map)
