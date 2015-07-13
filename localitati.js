@@ -23,7 +23,7 @@ var  cuBaseMap  = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.
 
 
 var slideshow = '<ul class="rslides"><li><img src="images/1.jpg" alt=""></li><li><img src="images/2.jpg" alt=""></li><li><img src="images/3.jpg" alt=""></li></ul>'
-
+var hahaha = 'Conform informațiilor din cadrul Recensământului Populației și Locuințelor din anul 2011 localitatea nu avea niciun locuitor la data recensământului. Conform Planurilor Directoare de Tragere (1916 - 1959) se poate identifica faptul că localitatea este în momentul de față sub lacul Stânca Costești. Localitatea a fost acoperită de ape odată cu construirea barajului și formarea lacului de acumulare Stânca Costești.OpenStreet Map și WikiMapia indică poziționarea localității într-o zonă unde, pe imaginile satelitare recente, se pot observa doar clădiri dărâmate.ANCPI reprezintă pe harta Topro5 localitatea Bold, ca un poligon cu două corpuri, unul dintre ele pe un câmp gol și un altul cuprinzând ferma industrială de la „Stânca Ripiceni”, care aparține în realitate de localitatea Ripiceni. ANCPI poziționează Ripicenii Vechi pe un câmp gol în sudul localității Ripiceni. În conformitate cu informațiile statistice din anul 2013 ale Autorității Naționale Sanitar Veterinare și Pentru Siguranța Alimentelor localitatea figurează cu 7 bovine.'
     //map.dragging.disable();
     //map.touchZoom.disable();
     //map.doubleClickZoom.disable();
@@ -53,7 +53,8 @@ var localitatiPuncte = L.geoJson(localitati, {
         layer.setIcon(iconita);
 
         layer.on('click', function (e) {
-            document.getElementById("info").innerHTML = "<p>aici vom scrie informatii despre " + feature.properties.name + ", iar mai jos imagini, daca exista</p>" + "<br>"+ "<p> pentru imagini se vor da credite autorului tot aici gen:</p><p><a href=''> Autor: Andrea Dumitrache</a><p/>"  
+			document.getElementById("info").innerHTML = hahaha;  
+            //document.getElementById("info").innerHTML = "<p>aici vom scrie informatii despre " + feature.properties.name + ", iar mai jos imagini, daca exista</p>" + "<br>"+ "<p> pentru imagini se vor da credite autorului tot aici gen:</p><p><a href=''> Autor: Andrea Dumitrache</a><p/>"  
             document.getElementById("meta").innerHTML = feature.properties.pictures;
             $(".rslides").responsiveSlides({
               auto: false,             // Boolean: Animate automatically, true or false
