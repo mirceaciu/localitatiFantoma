@@ -1,0 +1,2 @@
+ogr2ogr -f "GeoJSON" "D:\treburi\yourdataoutputname.geojson" -s_srs EPSG:3844 -t_srs CRS:84 PG:"host=10.6.220.80 user=Stefania dbname=localitatiFictive password=1234" "localitati_punct"
+
