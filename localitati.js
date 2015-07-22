@@ -1,5 +1,28 @@
 
-var map = L.map('map').setView([45.986, 24.785], 6);
+var bounds = new L.LatLngBounds(new L.LatLng(50.16282, 43.54980), new L.LatLng(40.39676, 15.40283));
+
+
+
+var centruHarta = [45.706, 29.333];
+var zoomRSP = 6 ;
+
+if($(document).width()>1500) {
+  var zoomRSP = 7 ;
+  var centruHarta = [45.801, 29.223];
+  var bounds = new L.LatLngBounds(new L.LatLng(49.48240, 39.77050), new L.LatLng(41.86137, 18.67675));
+} else if($(document).width()<700) {
+  var centruHarta = [42.642, 24.763];
+  var bounds = new L.LatLngBounds(new L.LatLng(49.05227, 30.45410), new L.LatLng(35.49645, 19.07226));  
+
+
+}
+else {
+  var zoomRSP = 6 ;
+  var centruHarta = [45.706, 29.333]
+};
+
+
+var map = L.map('map', {maxBounds: bounds}).setView(centruHarta, zoomRSP);
 
 
 var  cuBaseMap  = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -54,7 +77,7 @@ var localitatiPuncte = L.geoJson(localitati, {
         layer.setIcon(iconita);
 
         layer.on('click', function (e) {
-			  document.getElementById("info").innerHTML = 'Populatie INIS:xx <br> Carti Funciare: xx <br> Animale: xx <br>'+ lipsum+ ' <br><a href = "#" class="button" id="paragraf">Afla mai multe<a/> <br><a href = "#" class="button" id="imagebutton">Vezi imagini<a/> ';  
+			  document.getElementById("info").innerHTML = 'Populatie INIS: ' + feature.properties.populatie +' <br> Carti Funciare: '+ feature.properties.cartif +'<br> Animale: ' +feature.properties.animale+ '<br><a href = "#" class="button" id="paragraf">Afla mai multe<a/> <br><a href = "#" class="button" id="imagebutton">Vezi imagini<a/> ';  
             //document.getElementById("info").innerHTML = "<p>aici vom scrie informatii despre " + feature.properties.name + ", iar mai jos imagini, daca exista</p>" + "<br>"+ "<p> pentru imagini se vor da credite autorului tot aici gen:</p><p><a href=''> Autor: Andrea Dumitrache</a><p/>"  
             //document.getElementById("meta").innerHTML = feature.properties.pictures;
 
@@ -94,7 +117,7 @@ var localitatiPuncte = L.geoJson(localitati, {
                $("#imagebutton").click(function(){ 
                     if  (hits % 2 == 0) //pentru hituri impare
                     {
-              document.getElementById("meta").innerHTML = slideshow;
+              document.getElementById("meta").innerHTML = feature.properties.listimg;
               document.getElementById("imagebutton").innerHTML = 'inapoi la harta';
               $("#meta").css("z-index", 1);
               $(".rslides").responsiveSlides({
@@ -138,7 +161,7 @@ var localitatiPuncte = L.geoJson(localitati, {
                $('#paragraf').click(function(){ 
                     if  (hits % 2 == 0) //pentru hituri impare
                     {
-              document.getElementById("meta").innerHTML = hahaha;
+              document.getElementById("meta").innerHTML = feature.properties.obs;
               document.getElementById("paragraf").innerHTML = 'inapoi la harta';
               $("#meta").css("z-index", 1);
                     }

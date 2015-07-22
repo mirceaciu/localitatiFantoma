@@ -209,3 +209,18 @@ text-shadow: 2px 2px $text-shadow;
   width: 38px;}
 
   
+
+  @media (max-width: 600px) { 
+    #containter {
+      height: 50vh;
+      width: 100%;
+      bottom: 0;
+    }
+
+    #meta {
+      height: 50vh;
+      width: 100%;
+      top: 0;
+    }
+
+   }
