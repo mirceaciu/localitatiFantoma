@@ -10,7 +10,9 @@ if($(document).width()>1500) {
   var zoomRSP = 7 ;
   var centruHarta = [45.801, 29.223];
   var bounds = new L.LatLngBounds(new L.LatLng(49.48240, 39.77050), new L.LatLng(41.86137, 18.67675));
-} else if($(document).width()<700) {
+} 
+
+else if($(document).width()<=700) {
   var centruHarta = [42.642, 24.763];
   var bounds = new L.LatLngBounds(new L.LatLng(49.05227, 30.45410), new L.LatLng(35.49645, 19.07226));  
 
