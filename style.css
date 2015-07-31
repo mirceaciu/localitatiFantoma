@@ -13,17 +13,28 @@ body {
 #containter {
   position: absolute;
   right: 0;
-  width: 40%;
+  width: 35%;
   height: 100vh;
   float: right;
   background-color: rgba(210, 119, 198, 0.31); }
 
 #meta {
   position: absolute;
-  background-color: #462F50;
-  width: 60%;
+  background-color: rgba(0, 0, 0, 0.52);
+  width: 65%;
   height: 100vh;
   z-index: 0; }
+
+.containter-text {
+  position: relative;
+  top: 30%;
+  background-color: rgba(0, 0, 0, 0.52); }
+
+.text-informatii {
+  margin: 0 auto;
+  padding: 10px 80px;
+  max-width: 800px;
+  color: #fff; }
 
 #map {
   background-color: transparent;
@@ -56,14 +67,17 @@ a {
   color: #eeefc0; }
 
 #info {
-  margin-top: 60px;
   display: block;
   width: 100%;
   padding: 10px 10px;
   font-size: 110%;
   text-align: left;
   color: #fff;
-  text-shadow: 2px 2px #594f4f; }
+  text-shadow: 2px 2px #594f4f;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 60px; }
 
 .button {
   display: inline-block;
@@ -157,6 +171,8 @@ a {
     height: 50vh;
     width: 100%;
     bottom: 0; }
+  .containter-text {
+    top: 24%; }
   #meta {
     height: 50vh;
     width: 100%;

@@ -46,10 +46,10 @@ var  cuBaseMap  = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.
 
 
 
-var slideshow = '<ul class="rslides"><li><img src="images/1.jpg" alt=""></li><li><img src="images/2.jpg" alt=""></li><li><img src="images/3.jpg" alt=""></li></ul>'
-var hahaha = 'Conform informațiilor din cadrul Recensământului Populației și Locuințelor din anul 2011 localitatea nu avea niciun locuitor la data recensământului. Conform Planurilor Directoare de Tragere (1916 - 1959) se poate identifica faptul că localitatea este în momentul de față sub lacul Stânca Costești. Localitatea a fost acoperită de ape odată cu construirea barajului și formarea lacului de acumulare Stânca Costești.OpenStreet Map și WikiMapia indică poziționarea localității într-o zonă unde, pe imaginile satelitare recente, se pot observa doar clădiri dărâmate.ANCPI reprezintă pe harta Topro5 localitatea Bold, ca un poligon cu două corpuri, unul dintre ele pe un câmp gol și un altul cuprinzând ferma industrială de la „Stânca Ripiceni”, care aparține în realitate de localitatea Ripiceni. ANCPI poziționează Ripicenii Vechi pe un câmp gol în sudul localității Ripiceni. În conformitate cu informațiile statistice din anul 2013 ale Autorității Naționale Sanitar Veterinare și Pentru Siguranța Alimentelor localitatea figurează cu 7 bovine.'
-var backbutton = '<a href = "#" class="button" id="backbutton">inapoi la harta</a>'
-var lipsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis turpis non ante rutrum cursus. Mauris posuere eget leo porta auctor. Integer nec nulla vel enim venenatis egestas. Aenean vestibulum dui sed elit pharetra, sit amet dictum sapien fermentum. Phasellus bibendum a sem eu luctus. Curabitur sit amet ex dictum, cursus lacus sed, sagittis elit. Maecenas fermentum vel erat quis mattis. Nunc posuere urna orci, eget lobortis tellus pretium sit amet. In leo dolor, suscipit at dapibus eu, venenatis id dui.'
+//var slideshow = '<ul class="rslides"><li><img src="images/1.jpg" alt=""></li><li><img src="images/2.jpg" alt=""></li><li><img src="images/3.jpg" alt=""></li></ul>'
+//var hahaha = 'Conform informațiilor din cadrul Recensământului Populației și Locuințelor din anul 2011 localitatea nu avea niciun locuitor la data recensământului. Conform Planurilor Directoare de Tragere (1916 - 1959) se poate identifica faptul că localitatea este în momentul de față sub lacul Stânca Costești. Localitatea a fost acoperită de ape odată cu construirea barajului și formarea lacului de acumulare Stânca Costești.OpenStreet Map și WikiMapia indică poziționarea localității într-o zonă unde, pe imaginile satelitare recente, se pot observa doar clădiri dărâmate.ANCPI reprezintă pe harta Topro5 localitatea Bold, ca un poligon cu două corpuri, unul dintre ele pe un câmp gol și un altul cuprinzând ferma industrială de la „Stânca Ripiceni”, care aparține în realitate de localitatea Ripiceni. ANCPI poziționează Ripicenii Vechi pe un câmp gol în sudul localității Ripiceni. În conformitate cu informațiile statistice din anul 2013 ale Autorității Naționale Sanitar Veterinare și Pentru Siguranța Alimentelor localitatea figurează cu 7 bovine.'
+//var backbutton = '<a href = "#" class="button" id="backbutton">inapoi la harta</a>'
+
     //map.dragging.disable();
     //map.touchZoom.disable();
     //map.doubleClickZoom.disable();
@@ -69,8 +69,8 @@ var iconita = new L.icon({
 });
 
 
-
-
+var fbPicAlbum = '<ul class = "rslides"><li><img src= "https://scontent-fra3-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/10866188_609374749198414_8966078901519886672_o.jpg" alt=""></li><li><img src= "https://scontent-fra3-1.xx.fbcdn.net/hphotos-xat1/t31.0-8/10974264_609587842510438_7055052592841421742_o.jpg" alt=""></li></ul>;'
+var noImage = '<div class="containter-text" style = "text-align:center"> <p class="text-informatii" style = "text-align:center">nu există imagini. Dacă deţii informaţii contribuie</p> <a href="https://localitatifantoma.wordpress.com/contact" class="button" style = "margin: 10px 0px">Contribuie</a> </div>';
 var localitatiPuncte = L.geoJson(localitati, {
 	
 
@@ -79,7 +79,7 @@ var localitatiPuncte = L.geoJson(localitati, {
         layer.setIcon(iconita);
 
         layer.on('click', function (e) {
-			  document.getElementById("info").innerHTML = 'Populatie INIS: ' + feature.properties.populatie +' <br> Carti Funciare: '+ feature.properties.cartif +'<br> Animale: ' +feature.properties.animale+ '<br><a href = "#" class="button" id="paragraf">Afla mai multe<a/> <br><a href = "#" class="button" id="imagebutton">Vezi imagini<a/> ';  
+			  document.getElementById("info").innerHTML = 'Populatie ' +feature.properties.name +' : ' + feature.properties.populatie +' <br> Cărţi Funciare: '+ feature.properties.cartif +'<br> Animale: ' +feature.properties.animale+ '<br><a href = "#" class="button" id="paragraf">Afla mai multe<a/> <br><a href = "#" class="button" id="imagebutton">Vezi imagini<a/> ';  
             //document.getElementById("info").innerHTML = "<p>aici vom scrie informatii despre " + feature.properties.name + ", iar mai jos imagini, daca exista</p>" + "<br>"+ "<p> pentru imagini se vor da credite autorului tot aici gen:</p><p><a href=''> Autor: Andrea Dumitrache</a><p/>"  
             //document.getElementById("meta").innerHTML = feature.properties.pictures;
 
@@ -119,7 +119,15 @@ var localitatiPuncte = L.geoJson(localitati, {
                $("#imagebutton").click(function(){ 
                     if  (hits % 2 == 0) //pentru hituri impare
                     {
-              document.getElementById("meta").innerHTML = feature.properties.listimg;
+              
+              if (feature.properties.listimg){         
+                document.getElementById("meta").innerHTML = feature.properties.listimg;
+              } else if(feature.properties.name == "Rudari" ) {
+                 document.getElementById("meta").innerHTML = fbPicAlbum
+              }
+              else {
+                 document.getElementById("meta").innerHTML = noImage
+              }
               document.getElementById("imagebutton").innerHTML = 'inapoi la harta';
               $("#meta").css("z-index", 1);
               $(".rslides").responsiveSlides({
@@ -145,7 +153,7 @@ var localitatiPuncte = L.geoJson(localitati, {
                     else
                     { // pentru hituri pare
              document.getElementById("meta").innerHTML = '';
-              document.getElementById("imagebutton").innerHTML = 'vezi imagini';
+             document.getElementById("imagebutton").innerHTML = 'vezi imagini';
               $("#meta").css("z-index", 0);
 
                     }
@@ -163,7 +171,7 @@ var localitatiPuncte = L.geoJson(localitati, {
                $('#paragraf').click(function(){ 
                     if  (hits % 2 == 0) //pentru hituri impare
                     {
-              document.getElementById("meta").innerHTML = feature.properties.obs;
+              document.getElementById("meta").innerHTML = '<div class="containter-text"> <p class="text-informatii">'+ feature.properties.obs + "</p></div>";
               document.getElementById("paragraf").innerHTML = 'inapoi la harta';
               $("#meta").css("z-index", 1);
                     }
@@ -195,12 +203,12 @@ var JudetePoly = L.geoJson(judete, {
 
      style: function (feature) {
         return {
-        fillColor: '#D277C6',
+        //fillColor: '#D277C6',
         weight: 1.5,
         opacity: 1,
         color: '#ffffff',
         dashArray: '0',
-        fillOpacity: 0.2}
+        fillOpacity: 0}
     }
     
 }).addTo(map);
@@ -217,4 +225,4 @@ var overlayMaps = {
     "Judete" : JudetePoly
 };
 
-L.control.layers(baseMaps, overlayMaps).addTo(map)
+L.control.layers(baseMaps, overlayMaps, {position: 'topleft'}).addTo(map)

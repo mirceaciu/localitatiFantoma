@@ -7,6 +7,7 @@ $action_color: #68B89A;
 $fundal_meta: #462F50;
 $containter: rgba(210, 119, 198, 0.31);
 $fundal_harta: rgba(229, 229, 229,0);
+$drop_effect: rgba(0, 0, 0, 0.52);
 $text_link: rgb(238, 239, 192);
 $text-shadow: #594f4f;
 
@@ -27,7 +28,7 @@ body{
 #containter {
   position: absolute;
   right:0;
-	width:40%;
+	width:35%;
 	height:100vh;
 	float:right;
 	background-color:$containter;
@@ -35,11 +36,26 @@ body{
 
 #meta {
 position:absolute;
-background-color: $fundal_meta;
-width: 60%;
+background-color: $drop_effect;
+width: 65%;
 height: 100vh;
 z-index: 0;
 
+}
+
+.containter-text{
+  position: relative;
+  top: 30% ;
+  //text-align: justify;
+  //height: 100px;
+  background-color: $drop_effect;
+}
+
+.text-informatii{ 
+  margin: 0 auto;
+  padding: 10px 80px;
+  max-width: 800px;
+  color: #fff;
 }
 
 
@@ -83,7 +99,7 @@ a{
 }
 
 #info {
-margin-top: 60px;
+
 display: block;
 width: 100%;
 padding:10px 10px;
@@ -91,6 +107,11 @@ font-size: 110%;
 text-align: left;
 color: #fff;
 text-shadow: 2px 2px $text-shadow;
+width: 90%;
+text-align: center;
+margin: 0 auto;
+margin-top: 60px;
+
 
 }
 
@@ -213,6 +234,10 @@ text-shadow: 2px 2px $text-shadow;
       height: 50vh;
       width: 100%;
       bottom: 0;
+    }
+
+    .containter-text{
+      top: 24%;
     }
 
     #meta {
