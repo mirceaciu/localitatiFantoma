@@ -278,7 +278,7 @@
 	border-radius: 5px;
 	}
 .leaflet-control-layers-toggle {
-	background-image: url('http://mirceaciu.github.io/localitatiFantoma/assets/images/layers.png');
+	background-image: url(/assets/images/layers.png);
 	width: 36px;
 	height: 36px;
 	}
