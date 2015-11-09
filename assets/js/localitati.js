@@ -57,7 +57,7 @@ var  cuBaseMap  = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.
 //if (map.tap) map.tap.disable();
 
 var iconita = new L.icon({
-    iconUrl: '/assets/images/gimmi-round.png',
+    iconUrl: 'assets/images/gimmi-round.png',
     //iconRetinaUrl: 'my-icon@2x.png',
     iconSize: [16, 16],
    //iconAnchor: [0, 0],
